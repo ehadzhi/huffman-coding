@@ -1,40 +1,33 @@
-## Алгоритъм на Хъфман за компресия на данни
-#####  Проект по Структури от данни и програмиране
-######  (спец. Компютърни науки, 2015/16 г.)
+## Huffman Coding lossless data compression
+#####  Data Structures project
+######  (Computer Science, 2015/16 г.)
 
-##### Задача:
+##### Task:
 
-Да се напише програма, която въвежда низ от клавиатурата (или от файл), построява
-честотна таблица и дървото на Хъфман и извежда двоичната последователност, която
-кодира оригиналния низ. След получаване на двоичната последователност, да се
-изведат числа от 0 до 255, получени от разбиване на блокове от по 8 бита. Да се
-пресметне степента на компресия (отношението на броя на битовете на
-компресираната и декомпресираната последователност - считаме, че всеки символ се
-кодира с един байт). По дървото на Хъфман да се възстанови оригиналният низ.
-##### Задачи за бонус точки:
+Write a program, that ingests a string from standart input fd (or a file), builds a
+frequency table, Huffman tree and outputs the binary sequence, which 
+codes the original string. After getting the binary sequence, output numbers from 0 to 255, 
+which represent the binary sequence in bytes(8 bits). 
+Calculate the compression ratio (ratio between number of bits of compressed data 
+and the number of bit in the input string - we assume each sybol is coded in one byte). 
+Using the Huffman tree reconstruct the original string.
+##### Bonus points tasks:
 
-1. Създаденото дърво на Хъфман (не честотната таблица) да може да се извежда
-и въвежда в подходящ формат. Да се работи с файл от низове, вместо с входен
-низ от кодирана информация (дървото на Хъфман да се пази в същия или в
-отделен файл).
+1. The created huffman tree can be exported and imported in a suiting format. 
 
-2. Да се работи с произволен двоичен файл, като програмата реализираща
-кодирането на Хъфман трябва да може да приема като командни параметри
-следната информация:
--c[ompress] – параметър указващ че програмата ще работи в режим компресия;
--d[ecompress] – параметър указващ че програмата ще работи в режим
-декомпресия;
--i fname – параметър указващ името на входния файл (подлежащ на
-компресиране или декомпресираиране);
--o fname – параметър указващ името на изходния файл;
-В този случай е необходимо да се сравни, така реализираната архивираща
-програма със ZIP и RAR – при едни и същи входни фахлове, какъв е резултата
-от работата на трите програми.
+2. Your program can work with any file in binary format. Also it has a cli with different parameters:
+-c[ompress] 
+-d[ecompress]
+-i fname – input file name
+-o fname – output file name
+In this case you should compare how your huffman implementation compares to 
+ZIP and RAR archiving tools. Pick a file and compress them with the thress.
+After that compare the output file sizes.
 
-3. Да се реализира възможност за ефективно кодиране на големи фойлове или на
-потоци от данни, чрез имплементиране на Адаптивен алгоритъм на Хъфман.
-Програмата трябва да създава дървото на Хъфман без да е прочела всички
-данни (използвайки локалната честота на срещане на символите/байтовете) и
-да го модифицира в процеса на кодиране за да запази ефективността на
-алгоритъма
+3. Your program can work with large files or data streams. In this case 
+you should implement adaptive Huffman Coding. It should construct a huffman tree 
+from incomplete data and modify it in the coding process so that coding efficiency is optimal.
+ 
 
+Solution documentation: 
+[Huffman.pdf](https://github.com/ehadzhi/huffman-coding/blob/master/Huffman.pdf)
